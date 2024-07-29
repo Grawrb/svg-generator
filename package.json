@@ -1,0 +1,17 @@
+{
+    "name": "svg-generator",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "start": "npm run start"
+    },
+    "author": "grawrb",
+    "license": "MIT",
+    "dependencies": {
+        "inquirer": "8.2.4"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
+}
