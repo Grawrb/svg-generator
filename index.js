@@ -1,10 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require('path');
-const { default: Choices } = require('inquirer/lib/objects/choices');
+const { Circle, Triangle, Square } = require('./lib/shapes');
 
 // prompts for Inquirer
-const questions = [
+function questions()  {
+    inquirer.prompt([
+
     {
         type: "input",
         name: "text",
@@ -21,7 +22,7 @@ const questions = [
     {
         type: "input",
         name: "textColor",
-        message: "Enter a color (you may use a color keyword or a hexidecimal number"
+        message: "Enter a color for the text to be used (you may use a color keyword or a hexidecimal number)"
     },
     {
         type: "list",
@@ -32,7 +33,34 @@ const questions = [
     {
         type: "input",
         name: "shapeColor",
-        message: "Enter a color for your selected shape (you may use a color keyword or a hexidecimal number"
+        message: "Enter a color for your selected shape (you may use a color keyword or a hexidecimal number)"
     },
-];
+    ])
+    .then((answers) => {
+        console.log(answers);
+        const svg = generateSVG(answers);
+        fs.writeFile('logo.svg', svg, (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+        });
+    });
+}
+questions();
+
+function generateSVG(answers) {
+    let shape;
+    switch (answers.shape) {
+        case "Circle":
+            shape = new Circle(answers.text, answers.textColor, answers.shapeColor);
+            break;
+        case "Triangle":
+            shape = new Triangle(answers.text, answers.textColor, answers.shapeColor);
+            break;
+        case "Square":
+            shape = new Square(answers.text, answers.textColor, answers.shapeColor);
+            break;
+    }
+    return shape.render();
+};
+
 
