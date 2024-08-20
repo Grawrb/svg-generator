@@ -1,3 +1,4 @@
+// Import inquirer and fs node packages. Import shape classes
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { Triangle, Circle, Square } = require('./lib/shapes');
@@ -61,6 +62,7 @@ inquirer.prompt(questions).then((answers) => {
         </svg>
     `;
 
+    // Writes new svg to file named 'logo.svg' and logs success message to console
     fs.writeFileSync('logo.svg', svg.trim());
     console.log('Generated logo.svg');
 });
