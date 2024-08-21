@@ -6,6 +6,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Testing](#testing)
+- [Video Walkthrough](#video-walkthrough)
 - [Questions](#questions)
 
 ## Description
@@ -33,6 +34,11 @@ To use this application, enter the following within your CLI:
 This application includes a test suite of three individual tests. To ensure the generator is outputting correctly, simply enter
 ```npm run test```
 within the command line. Jest will run tests to determine if the three shapes would be rendered correctly.
+
+## Video Walkthrough
+
+- <video src="https://drive.google.com/file/d/1KMNFKMtTB2Tnpo212_ubhLkwnUgEIqxC/view" width="320" height="240" controls></video>
+- <a href="https://drive.google.com/file/d/1KMNFKMtTB2Tnpo212_ubhLkwnUgEIqxC/view" alt="SVG Generator Walkthrough Video">SVG Generator Walkthrough Video</a>
 
 ## Questions
 
